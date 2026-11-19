@@ -1,0 +1,16 @@
+# Static address for the interface Kea serves. A DHCP server must not
+# get its own address via DHCP on the network it serves.
+[connection]
+id=dhcp-lan
+type=ethernet
+interface-name=eth0
+autoconnect=true
+
+[ipv4]
+method=manual
+address1=192.168.100.2/24,192.168.100.1
+dns=192.168.100.1;
+dns-search=lan.example;
+
+[ipv6]
+method=disabled

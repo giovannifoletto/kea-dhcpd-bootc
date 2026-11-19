@@ -1,0 +1,13 @@
+# bootc-image-builder customizations. Copy to config.toml and edit.
+# config.toml is git-ignored because it holds your key/password hash.
+
+[[customizations.user]]
+name = "admin"
+# Generate a hash with: openssl passwd -6
+# password = "$6$..."
+key = "ssh-ed25519 AAAA... you@host"
+groups = ["wheel"]
+
+[[customizations.filesystem]]
+mountpoint = "/"
+minsize = "10 GiB"
